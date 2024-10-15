@@ -1,7 +1,6 @@
 # ToDoListWebApplication
 ![Lenguaj](https://img.shields.io/badge/language-Go-cyan)
 ![Last commit](https://img.shields.io/github/last-commit/franlo42/ToDoListWebApplication)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/:interval/:user/:repo)
 ![GitHub contributors](https://img.shields.io/github/contributors/franlo42/ToDoListWebApplication)
 
 
