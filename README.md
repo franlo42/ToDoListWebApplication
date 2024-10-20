@@ -1,9 +1,9 @@
 # ToDoListWebApplication
-![GitHub Created At](https://img.shields.io/github/created-at/franlo42/ToDoListWebApplication%20?color=%23A594F9)
-![GitHub contributors](https://img.shields.io/github/contributors/franlo42/ToDoListWebApplication?COLOR=%23F95454)
-![GitHub top language](https://img.shields.io/github/languages/top/franlo42/ToDoListWebApplication?color=%2377CDFF)
-![Last commit](https://img.shields.io/github/last-commit/franlo42/ToDoListWebApplication?color=%2372BF78)
-![GitHub repo size](https://img.shields.io/github/repo-size/franlo42/ToDoListWebApplication?color=%23FFBF61)
+![GitHub Created At](https://img.shields.io/github/created-at/franlo42/ToDoListWebApplication%20?color=%234F1787)
+![GitHub contributors](https://img.shields.io/github/contributors/franlo42/ToDoListWebApplication?COLOR=%23FF6500)
+![GitHub top language](https://img.shields.io/github/languages/top/franlo42/ToDoListWebApplication?color=%231230AE)
+![Last commit](https://img.shields.io/github/last-commit/franlo42/ToDoListWebApplication?color=%23005B41)
+![GitHub repo size](https://img.shields.io/github/repo-size/franlo42/ToDoListWebApplication?color=%23704264)
 
 ## Objective: 
 Create a basic To-Do list web application using Go, Dockerize it, and set up multi-container orchestration with Docker Compose.
