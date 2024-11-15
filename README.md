@@ -54,8 +54,6 @@ Create a basic To-Do list web application using Go, Dockerize it, and set up mul
 
 ## ⚡ Quick Setup
 
-### 🛠️ Docker Compose
-
 You can run the application on your system using Docker Compose after cloning this repository:
 
 ```shell
