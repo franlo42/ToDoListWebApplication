@@ -46,23 +46,17 @@ func getTodos(c *gin.Context) {
 }
 
 func getTodosByStatus(c *gin.Context) {
-	// Obtener el parámetro 'status' de los query params
-	status := c.DefaultQuery("status", "") // Si no se pasa ningún valor, será una cadena vacía
-
-	// Validar que el status sea válido
+	status := c.DefaultQuery("status", "")
 	if status != "" && !isValidStatus(status) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Status inválido. Debe ser 'pending' o 'completed'"})
 		return
 	}
 
-	// Consulta SQL para filtrar por status
 	var rows *sql.Rows
 	var err error
 	if status == "" {
-		// Si no se proporciona un filtro de status, devolver todos los todos
 		rows, err = db.Query("SELECT id, title, status, created_at FROM todos")
 	} else {
-		// Si hay un filtro de status, buscar solo los que coinciden
 		rows, err = db.Query("SELECT id, title, status, created_at FROM todos WHERE status = $1", status)
 	}
 
@@ -110,7 +104,6 @@ func createTodo(c *gin.Context) {
 		return
 	}
 
-	// Validar que el status esté permitido
 	if !isValidStatus(newTodo.Status) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Status inválido. Debe ser 'pending' o 'completed'"})
 		return
@@ -164,29 +157,48 @@ func deleteTodo(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"message": "Todo eliminado con éxito"})
 }
 
+// Función para esperar la conexión a la base de datos
+func waitForDB(connStr string) (*sql.DB, error) {
+	var db *sql.DB
+	var err error
+	for {
+		db, err = sql.Open("postgres", connStr)
+		if err != nil {
+			log.Println("Error al intentar conectar a la base de datos:", err)
+		} else {
+			if err = db.Ping(); err == nil {
+				break
+			} else {
+				log.Println("No se pudo conectar a la base de datos:", err)
+			}
+		}
+		log.Println("Esperando 2 segundos antes de intentar nuevamente...")
+		time.Sleep(2 * time.Second)
+	}
+	return db, nil
+}
+
 func main() {
 	connStr := "postgres://user:password@db:5432/tododb?sslmode=disable"
+
+	// Intentar conectar a la base de datos
 	var err error
-	db, err = sql.Open("postgres", connStr)
+	db, err = waitForDB(connStr)
 	if err != nil {
-		log.Fatal("Error abriendo conexión a la base de datos:", err)
+		log.Fatal("No se pudo conectar a la base de datos después de varios intentos:", err)
 	}
 	defer db.Close()
-
-	if err := db.Ping(); err != nil {
-		log.Fatal("No se puede conectar a la base de datos:", err)
-	}
 
 	fmt.Println("Conexión exitosa a PostgreSQL")
 
 	router := gin.Default()
 
 	router.GET("/todos", getTodos)
-	router.GET("/todos/status", getTodosByStatus) // Nueva ruta para obtener todos filtrados por 'status'
+	router.GET("/todos/status", getTodosByStatus)
 	router.GET("/todos/:id", getTodo)
 	router.POST("/todos", createTodo)
 	router.PUT("/todos/:id", updateTodo)
 	router.DELETE("/todos/:id", deleteTodo)
 
-	router.Run(":8080") // Escuchar en el puerto 8080
+	router.Run(":8080")
 }
