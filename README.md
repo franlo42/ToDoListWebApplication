@@ -24,6 +24,7 @@ Managing your tasks has never been so easy!
 - [Objective](#-objective)
 - [Requirements](#-requirements)
 - [Quick Setup](#-quick-setup)
+- [API Test](#-api-test)
 
 </details>
 
@@ -61,3 +62,12 @@ git clone URLrepo
 cd nombreRepo
 docker compose up --build -d
 ```
+
+## 🧪 API Test
+
+We can easily test the web app API functionalities with curl
+
+### 🗒️ Obtain the full list of ToDos
+
+```bash
+curl -X GET http://localhost:8080/api/todos
