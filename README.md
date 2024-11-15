@@ -19,7 +19,7 @@ Managing your tasks has never been so easy!
 <details>
 <summary><kbd>Table of Contents</kbd></summary>
 
-#### TOC
+#### ToC
 
 - [Objective](#-objective)
 - [Requirements](#-requirements)
