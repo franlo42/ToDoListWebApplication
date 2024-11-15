@@ -23,6 +23,7 @@ Managing your tasks has never been so easy!
 
 - [Objective](#-objective)
 - [Requirements](#-requirements)
+- [Quick Setup](#-quick-setup)
 
 </details>
 
@@ -51,4 +52,14 @@ Create a basic To-Do list web application using Go, Dockerize it, and set up mul
    - 💾 Use a volume to ensure data persistence for the database container.
    - 📊 Implement a logging mechanism using a Go package to log user interactions.
 
+## ⚡ Quick Setup
 
+### 🛠️ Docker Compose
+
+You can run the application on your system using Docker Compose after cloning this repository:
+
+```shell
+git clone URLrepo
+cd nombreRepo
+docker compose up --build -d
+```
