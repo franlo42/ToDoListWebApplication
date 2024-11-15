@@ -4,7 +4,7 @@ WORKDIR /app
 COPY . .
 RUN apk add --no-cache git && \
     go mod download && \
-    go build -o todo-app && \
+    go build -o todo-app ./cmd/toDoListWebApplication && \
     apk del git
 
 # Etapa de producción
