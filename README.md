@@ -25,6 +25,7 @@ Managing your tasks has never been so easy!
 - [Requirements](#-requirements)
 - [Quick Setup](#-quick-setup)
 - [API Test](#-api-test)
+  - [Obtain the full list of ToDos](#-obtain-the-full-list-of-todos)
 
 </details>
 
@@ -63,7 +64,7 @@ cd nombreRepo
 docker compose up --build -d
 ```
 
-## 🧪 API Test
+## 💉 API Test
 
 We can easily test the web app API functionalities with curl
 
@@ -71,3 +72,32 @@ We can easily test the web app API functionalities with curl
 
 ```bash
 curl -X GET http://localhost:8080/api/todos
+```
+### ⚠️ Obtain the list of ToDos pending/completed
+
+```bash
+curl "http://localhost:8080/todos?status=pending"
+```
+
+### ➕ Add a new ToDo
+
+```bash
+curl -X POST http://localhost:8080/todos -H "Content-Type: application/json" -d '{"title": "New Task", "status": "pending"}'
+```
+
+### 🔄 Update a ToDo by ID
+
+```bash
+curl -X PUT http://localhost:8080/todos/1 -H "Content-Type: application/json" -d '{"title": "Updated Task", "status": "completed"}'
+```
+### ⁉️ Check a ToDo by ID
+
+```bash
+curl http://localhost:8080/todos/1
+```
+
+### 🗑️ Delete a ToDo by ID
+
+```bash
+curl -X DELETE http://localhost:8080/todos/1
+```
