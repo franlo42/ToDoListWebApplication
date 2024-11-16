@@ -76,7 +76,7 @@ We can easily test the web app API functionalities with curl
 ### 🗒️ Obtain the full list of ToDos
 
 ```bash
-curl -X GET http://localhost:8080/api/todos
+curl -X GET http://localhost:8080/todos
 ```
 
 ### ⚠️ Obtain the list of ToDos pending/completed
@@ -100,7 +100,7 @@ curl -X PUT http://localhost:8080/todos/1 -H "Content-Type: application/json" -d
 ### ⁉️ Check a ToDo by ID
 
 ```bash
-curl http://localhost:8080/todos/1
+curl -X GET http://localhost:8080/todos/1
 ```
 
 ### 🗑️ Delete a ToDo by ID
