@@ -48,7 +48,7 @@ Create a basic To-Do list web application using Go, Dockerize it, and set up mul
    - 📦 Use a lightweight base image like `golang:alpine` for building the container.
    - 🔄 Use a multi-stage build.
 
-3. **Docker Compose**
+3. **🐙 Docker Compose**
    - 📄 Create a `docker-compose.yml` file to define and run a multi-container setup.
    - The setup should include:
      - 🫙 **Go App Container**: Containerize the Go web server.
