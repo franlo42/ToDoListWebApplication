@@ -194,7 +194,7 @@ func main() {
 	router := gin.Default()
 
 	router.GET("/todos", getTodos)
-	router.GET("/todos/status", getTodosByStatus)
+	router.GET("/todos", getTodosByStatus)
 	router.GET("/todos/:id", getTodo)
 	router.POST("/todos", createTodo)
 	router.PUT("/todos/:id", updateTodo)
