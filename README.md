@@ -64,9 +64,9 @@ Create a basic To-Do list web application using Go, Dockerize it, and set up mul
 You can run the application on your system using Docker Compose after cloning this repository:
 
 ```shell
-git clone URLrepo
-cd nombreRepo
-docker compose up --build -d
+git clone https://github.com/franlo42/ToDoListWebApplication.git
+cd ToDoListWebApplication
+docker compose up --build
 ```
 
 ## 💉 API Test
