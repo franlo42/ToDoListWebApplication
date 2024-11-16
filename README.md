@@ -82,7 +82,7 @@ curl -X GET http://localhost:8080/api/todos
 ### ⚠️ Obtain the list of ToDos pending/completed
 
 ```bash
-curl "http://localhost:8080/todos/status?status=pending"
+curl -X GET http://localhost:8080/todos/status?status=pending
 ```
 
 ### ➕ Add a new ToDo
