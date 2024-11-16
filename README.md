@@ -28,8 +28,8 @@ Managing your tasks has never been so easy!
   - [Obtain the list of ToDos pending/completed](#-obtain-the-list-of-todos-pendingcompleted)
   - [Add a new ToDo](#-add-a-new-todo)
   - [Update a ToDo by ID](#-update-a-todo-by-id)
-  - [Check a ToDo by ID](#⁉️-check-a-todo-by-id)
-  - [Delete a ToDo by ID](#🗑️-delete-a-todo-by-id)
+  - [Check a ToDo by ID](#-check-a-todo-by-id)
+  - [Delete a ToDo by ID](#-delete-a-todo-by-id)
 
 </details>
 
@@ -97,7 +97,7 @@ curl -X POST http://localhost:8080/todos -H "Content-Type: application/json" -d 
 curl -X PUT http://localhost:8080/todos/1 -H "Content-Type: application/json" -d '{"title": "Updated Task", "status": "completed"}'
 ```
 
-### :interrobang: Check a ToDo by ID
+### ⁉️ Check a ToDo by ID
 
 ```bash
 curl -X GET http://localhost:8080/todos/1
