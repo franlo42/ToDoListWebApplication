@@ -43,7 +43,6 @@ func getTodos(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusOK, todos)
-	c.Writer.Write([]byte("\n"))
 }
 
 func getTodosByStatus(c *gin.Context) {
@@ -78,7 +77,6 @@ func getTodosByStatus(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusOK, todos)
-	c.Writer.Write([]byte("\n"))
 }
 
 func getTodo(c *gin.Context) {
@@ -97,7 +95,6 @@ func getTodo(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusOK, todo)
-	c.Writer.Write([]byte("\n"))
 }
 
 func createTodo(c *gin.Context) {
@@ -122,7 +119,6 @@ func createTodo(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusCreated, newTodo)
-	c.Writer.Write([]byte("\n"))
 }
 
 func updateTodo(c *gin.Context) {
@@ -148,7 +144,6 @@ func updateTodo(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusOK, gin.H{"message": "Todo actualizado con éxito"})
-	c.Writer.Write([]byte("\n"))
 }
 
 func deleteTodo(c *gin.Context) {
@@ -160,7 +155,6 @@ func deleteTodo(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusOK, gin.H{"message": "Todo eliminado con éxito"})
-	c.Writer.Write([]byte("\n"))
 }
 
 // Función para esperar la conexión a la base de datos
