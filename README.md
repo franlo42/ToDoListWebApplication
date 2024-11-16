@@ -26,6 +26,11 @@ Managing your tasks has never been so easy!
 - [Quick Setup](#-quick-setup)
 - [API Test](#-api-test)
   - [Obtain the full list of ToDos](#-obtain-the-full-list-of-todos)
+  - [Obtain the list of ToDos pending/completed](#-obtain-the-list-of-todos-pendingcompleted)
+  - [Add a new ToDo](#-add-a-new-todo)
+  - [Update a ToDo by ID](#-update-a-todo-by-id)
+  - [Check a ToDo by ID](#-check-a-todo-by-id)
+  - [Delete a ToDo by ID](#-delete-a-todo-by-id)
 
 </details>
 
@@ -73,6 +78,7 @@ We can easily test the web app API functionalities with curl
 ```bash
 curl -X GET http://localhost:8080/api/todos
 ```
+
 ### ⚠️ Obtain the list of ToDos pending/completed
 
 ```bash
@@ -90,6 +96,7 @@ curl -X POST http://localhost:8080/todos -H "Content-Type: application/json" -d 
 ```bash
 curl -X PUT http://localhost:8080/todos/1 -H "Content-Type: application/json" -d '{"title": "Updated Task", "status": "completed"}'
 ```
+
 ### ⁉️ Check a ToDo by ID
 
 ```bash
