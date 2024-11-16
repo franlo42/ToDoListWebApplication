@@ -2,7 +2,7 @@
   
   <img height="300" src="https://github.com/user-attachments/assets/30a161b1-8813-4fab-a7c0-fcd64c9e3ae0">
   
-  # ToDoListWebApplication
+  # To-Do List Web Application
   
   ![GitHub Created At](https://img.shields.io/github/created-at/franlo42/ToDoListWebApplication%20?color=%234F1787)
   ![GitHub contributors](https://img.shields.io/github/contributors/franlo42/ToDoListWebApplication?COLOR=%23FF6500)
