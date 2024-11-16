@@ -43,6 +43,7 @@ func getTodos(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusOK, todos)
+	c.Writer.Write([]byte("\n"))
 }
 
 func getTodosByStatus(c *gin.Context) {
@@ -77,6 +78,7 @@ func getTodosByStatus(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusOK, todos)
+	c.Writer.Write([]byte("\n"))
 }
 
 func getTodo(c *gin.Context) {
@@ -95,6 +97,7 @@ func getTodo(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusOK, todo)
+	c.Writer.Write([]byte("\n"))
 }
 
 func createTodo(c *gin.Context) {
@@ -119,6 +122,7 @@ func createTodo(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusCreated, newTodo)
+	c.Writer.Write([]byte("\n"))
 }
 
 func updateTodo(c *gin.Context) {
@@ -144,6 +148,7 @@ func updateTodo(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusOK, gin.H{"message": "Todo actualizado con éxito"})
+	c.Writer.Write([]byte("\n"))
 }
 
 func deleteTodo(c *gin.Context) {
@@ -155,6 +160,7 @@ func deleteTodo(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusOK, gin.H{"message": "Todo eliminado con éxito"})
+	c.Writer.Write([]byte("\n"))
 }
 
 // Función para esperar la conexión a la base de datos
@@ -178,6 +184,20 @@ func waitForDB(connStr string) (*sql.DB, error) {
 	return db, nil
 }
 
+func printLogo() {
+	logo := `
+ _____    ______      _     _     _   _    _      _      ___              
+|_   _|   |  _  \    | |   (_)   | | | |  | |    | |    / _ \             
+  | | ___ | | | |___ | |    _ ___| |_| |  | | ___| |__ / /_\ \_ __  _ __  
+  | |/ _ \| | | / _ \| |   | / __| __| |/\| |/ _ \ '_ \|  _  | '_ \| '_ \ 
+  | | (_) | |/ / (_) | |___| \__ \ |_\  /\  /  __/ |_) | | | | |_) | |_) |
+  \_/\___/|___/ \___/\_____/_|___/\__|\/  \/ \___|_.__/\_| |_/ .__/| .__/ 
+                                                             | |   | |    
+                                                             |_|   |_|    
+`
+	fmt.Println(logo)
+}
+
 func main() {
 	connStr := "postgres://user:password@db:5432/tododb?sslmode=disable"
 
@@ -190,6 +210,8 @@ func main() {
 	defer db.Close()
 
 	fmt.Println("Conexión exitosa a PostgreSQL")
+
+	printLogo()
 
 	router := gin.Default()
 
