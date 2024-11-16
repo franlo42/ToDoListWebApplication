@@ -30,7 +30,7 @@ Managing your tasks has never been so easy!
   - [Add a new ToDo](#-add-a-new-todo)
   - [Update a ToDo by ID](#-update-a-todo-by-id)
   - [Check a ToDo by ID](#-check-a-todo-by-id)
-  - [Delete a ToDo by ID](#-delete-a-todo-by-id)
+  - [Delete a ToDo by ID](#--delete-a-todo-by-id)
 
 </details>
 
