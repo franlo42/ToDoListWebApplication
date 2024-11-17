@@ -91,6 +91,9 @@ curl -X GET http://localhost:8080/todos/status?status=pending
 curl -X POST http://localhost:8080/todos -H "Content-Type: application/json" -d '{"title": "New Task", "status": "pending"}'
 ```
 
+> [!IMPORTANT]  
+> The **status attribute** must be 'pending' or 'completed'.
+
 ### 🔄 Update a ToDo by ID
 
 ```bash
@@ -108,3 +111,27 @@ curl -X GET http://localhost:8080/todos/1
 ```bash
 curl -X DELETE http://localhost:8080/todos/1
 ```
+
+## 🛑 Stopping the Application
+
+### 1️⃣ Stop containers without deleting data
+
+```bash
+docker-compose down
+```
+
+### 2️⃣ Restart containers with persistent data
+
+```bash
+docker-compose up
+```
+All previous data will still be available
+
+
+> [!TIP]
+> If you want to remove all data and restart fresh:
+```bash
+docker-compose down -v 
+docker-compose up --build
+```
+> This will delete the volumes and reinitialize the database
