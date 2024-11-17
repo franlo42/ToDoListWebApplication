@@ -25,11 +25,12 @@ Managing your tasks has never been so easy!
 - [Quick Setup](#-quick-setup)
 - [API Test](#-api-test)
   - [Obtain the full list of ToDos](#-obtain-the-full-list-of-todos)
-  - [Obtain the list of ToDos pending/completed](#-obtain-the-list-of-todos-pendingcompleted)
+  - [Obtain the list of ToDos pending/completed](#-obtain-the-list-of-todos-pending/completed)
   - [Add a new ToDo](#-add-a-new-todo)
   - [Update a ToDo by ID](#-update-a-todo-by-id)
   - [Check a ToDo by ID](#-check-a-todo-by-id)
   - [Delete a ToDo by ID](#-delete-a-todo-by-id)
+- [Stopping the Application](#-stopping-the-application)
 
 </details>
 
@@ -134,4 +135,4 @@ All previous data will still be available
 > docker-compose down -v 
 > docker-compose up --build
 > ```
-> This will delete the volumes and reinitialize the database
+> This will delete the volumes and reinitialize the database.
