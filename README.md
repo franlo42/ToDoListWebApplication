@@ -130,8 +130,8 @@ All previous data will still be available
 
 > [!TIP]
 > If you want to remove all data and restart fresh:
-```bash
-docker-compose down -v 
-docker-compose up --build
-```
+> ```bash
+> docker-compose down -v 
+> docker-compose up --build
+> ```
 > This will delete the volumes and reinitialize the database
