@@ -68,19 +68,19 @@ docker compose up --build
 
 We can easily test the web app API functionalities with curl
 
-**🗒️ Obtain the full list of ToDos**
+  - **🗒️ Obtain the full list of ToDos**
 
 ```bash
 curl -X GET http://localhost:8080/todos
 ```
 
-**⚠️ Obtain the list of ToDos pending/completed**
+  - **⚠️ Obtain the list of ToDos pending/completed**
 
 ```bash
 curl -X GET http://localhost:8080/todos/status?status=pending
 ```
 
-**➕ Add a new ToDo**
+  - **➕ Add a new ToDo**
 
 ```bash
 curl -X POST http://localhost:8080/todos -H "Content-Type: application/json" -d '{"title": "New Task", "status": "pending"}'
@@ -89,19 +89,19 @@ curl -X POST http://localhost:8080/todos -H "Content-Type: application/json" -d 
 > [!IMPORTANT]  
 > The **status attribute** must be 'pending' or 'completed'.
 
-**🔄 Update a ToDo by ID**
+  - **🔄 Update a ToDo by ID**
 
 ```bash
 curl -X PUT http://localhost:8080/todos/1 -H "Content-Type: application/json" -d '{"title": "Updated Task", "status": "completed"}'
 ```
 
-**⁉️ Check a ToDo by ID**
+  - **⁉️ Check a ToDo by ID**
 
 ```bash
 curl -X GET http://localhost:8080/todos/1
 ```
 
-**🗑️ Delete a ToDo by ID**
+  - **🗑️ Delete a ToDo by ID**
 
 ```bash
 curl -X DELETE http://localhost:8080/todos/1
@@ -109,13 +109,13 @@ curl -X DELETE http://localhost:8080/todos/1
 
 ## 🛑 Stopping the Application
 
-**1️⃣ Stop containers without deleting data**
+1. **Stop containers without deleting data**
 
 ```bash
 docker-compose down
 ```
 
-**2️⃣ Restart containers with persistent data**
+2. **Restart containers with persistent data**
 
 ```bash
 docker-compose up
